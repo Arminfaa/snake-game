@@ -282,91 +282,6 @@ body {
   color: #4ade80;
 }
 
-.direction-pad {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.4rem;
-  direction: ltr;
-  padding: 0.75rem;
-  border-radius: 20px;
-  background: rgba(30, 41, 59, 0.5);
-  border: 1px solid rgba(148, 163, 184, 0.1);
-}
-
-.pad-row {
-  display: flex;
-  gap: 0.4rem;
-  align-items: center;
-}
-
-.pad-btn {
-  width: 56px;
-  height: 56px;
-  border: 1px solid rgba(148, 163, 184, 0.12);
-  border-radius: 16px;
-  background: linear-gradient(145deg, #3d4f6a, #2a3649);
-  color: #e2e8f0;
-  cursor: pointer;
-  user-select: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  transition:
-    transform 0.22s cubic-bezier(0.34, 1.4, 0.64, 1),
-    box-shadow 0.22s ease,
-    background 0.22s ease,
-    border-color 0.22s ease;
-}
-
-.pad-btn svg {
-  width: 22px;
-  height: 22px;
-  fill: currentColor;
-  opacity: 0.9;
-  transition: transform 0.22s cubic-bezier(0.34, 1.4, 0.64, 1);
-}
-
-.pad-btn-center {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: rgba(74, 222, 128, 0.15);
-  border-color: rgba(74, 222, 128, 0.25);
-  pointer-events: none;
-  box-shadow: none;
-}
-
-.pad-btn:hover:not(:disabled) {
-  background: linear-gradient(145deg, #4a5f7d, #334155);
-  border-color: rgba(74, 222, 128, 0.3);
-  transform: translateY(-2px);
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.3),
-    0 0 0 1px rgba(74, 222, 128, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-.pad-btn:hover:not(:disabled) svg {
-  transform: scale(1.1);
-}
-
-.pad-btn:active:not(:disabled) {
-  transform: translateY(1px) scale(0.96);
-  box-shadow:
-    0 2px 6px rgba(0, 0, 0, 0.3),
-    inset 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition-duration: 0.08s;
-}
-
-.pad-btn:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-
 .controls {
   display: flex;
   gap: 0.75rem;
@@ -457,10 +372,6 @@ kbd {
 }
 
 @media (min-width: 640px) {
-  .direction-pad {
-    display: none;
-  }
-
   .mobile-hint {
     display: none !important;
   }
@@ -588,45 +499,6 @@ kbd {
     font-size: 1.1rem;
   }
 
-  .direction-pad {
-    width: 100%;
-    max-width: 260px;
-    gap: 0.35rem;
-    padding: 0.85rem 1rem 0.75rem;
-    border-radius: 22px;
-    background: rgba(30, 41, 59, 0.75);
-    border-color: rgba(148, 163, 184, 0.16);
-    box-shadow:
-      0 8px 24px rgba(0, 0, 0, 0.25),
-      inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  }
-
-  .pad-row {
-    gap: 0.35rem;
-  }
-
-  .pad-btn {
-    width: 62px;
-    height: 62px;
-    border-radius: 18px;
-    touch-action: manipulation;
-  }
-
-  .pad-btn svg {
-    width: 24px;
-    height: 24px;
-  }
-
-  .pad-btn-center {
-    width: 32px;
-    height: 32px;
-  }
-
-  .pad-btn:active:not(:disabled) {
-    background: linear-gradient(145deg, #4a5f7d, #334155);
-    border-color: rgba(74, 222, 128, 0.35);
-  }
-
   .controls {
     width: 100%;
     gap: 0.55rem;
@@ -672,15 +544,5 @@ kbd {
 
   .subtitle {
     font-size: 0.72rem;
-  }
-
-  .pad-btn {
-    width: 56px;
-    height: 56px;
-    border-radius: 16px;
-  }
-
-  .direction-pad {
-    max-width: 228px;
   }
 }

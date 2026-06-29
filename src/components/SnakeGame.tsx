@@ -1,76 +1,9 @@
 import { useRef, useCallback } from 'react'
-import type { Direction } from '../types'
 import { GRID_SIZE, MIN_SPEED_LEVEL, MAX_SPEED_LEVEL } from '../utils'
 import { useSnakeGame } from '../hooks/useSnakeGame'
 import { useResponsiveCellSize, getBoardSize } from '../hooks/useResponsiveCellSize'
 
 const SWIPE_THRESHOLD = 28
-
-function DirectionPad({
-  onDirection,
-  disabled,
-}: {
-  onDirection: (dir: Direction) => void
-  disabled: boolean
-}) {
-  return (
-    <div className="direction-pad">
-      <button
-        type="button"
-        className="pad-btn"
-        disabled={disabled}
-        onClick={() => onDirection('UP')}
-        aria-label="Up"
-      >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 4l-8 8h16z" />
-        </svg>
-      </button>
-      <div className="pad-row">
-        <button
-          type="button"
-          className="pad-btn"
-          disabled={disabled}
-          onClick={() => onDirection('LEFT')}
-          aria-label="Left"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 12l8-8v16z" />
-          </svg>
-        </button>
-        <button
-          type="button"
-          className="pad-btn pad-btn-center"
-          disabled={disabled}
-          aria-hidden="true"
-          tabIndex={-1}
-        />
-        <button
-          type="button"
-          className="pad-btn"
-          disabled={disabled}
-          onClick={() => onDirection('RIGHT')}
-          aria-label="Right"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M20 12l-8-8v16z" />
-          </svg>
-        </button>
-      </div>
-      <button
-        type="button"
-        className="pad-btn"
-        disabled={disabled}
-        onClick={() => onDirection('DOWN')}
-        aria-label="Down"
-      >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 20l8-8H4z" />
-        </svg>
-      </button>
-    </div>
-  )
-}
 
 export default function SnakeGame() {
   const {
@@ -219,8 +152,6 @@ export default function SnakeGame() {
             </div>
           )}
         </div>
-
-        <DirectionPad onDirection={changeDirection} disabled={gameOver} />
       </div>
 
       <div className="controls">
@@ -238,7 +169,7 @@ export default function SnakeGame() {
         <kbd>↑↓←→</kbd> or <kbd>WASD</kbd> to move — <kbd>Space</kbd> or <kbd>Esc</kbd> to pause
       </footer>
 
-      <p className="mobile-hint">Swipe on the board or use the D-pad to move</p>
+      <p className="mobile-hint">Swipe on the board to move</p>
     </div>
   )
 }
